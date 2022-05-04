@@ -14,13 +14,27 @@ public class Bob extends Actor
      */
     public void act()
     {
-        
+        move(5);
+        if(System.currentTimeMillis()%50 == 0)
+        {
+            if(Greenfoot.getRandomNumber(100)>=50)
+            {
+                turn(Greenfoot.getRandomNumber(90));
+            }
+        }       
     }
-    
     public Bob()
     {
         GreenfootImage image = getImage();
-        image.scale(20, 20);
+        image.scale(50, 50);
         setImage(image);
+    }
+    
+    public void runAway()
+    {
+        MyWorld world = (MyWorld) getWorld();
+        Leroy leroy = world.getObjects(Leroy.class).get(0);
+        int leroyX = leroy.getX();
+        int leroyY = leroy.getY();
     }
 }

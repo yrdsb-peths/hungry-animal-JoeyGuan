@@ -41,6 +41,11 @@ public class Leroy extends Actor
             remove();
         }
         
+        if(System.currentTimeMillis()%10 == 0)
+        {
+            MyWorld world = (MyWorld) getWorld();
+            world.spawnBob();
+        }
         System.out.println("Kill Count: " + count);
     }
     
