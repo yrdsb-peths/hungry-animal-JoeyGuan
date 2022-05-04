@@ -12,6 +12,7 @@ public class Leroy extends Actor
      * Act - do whatever the Leroy wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
+    public int count = 0;
     public void act()
     {
         if(Greenfoot.isKeyDown("up")) 
@@ -34,6 +35,18 @@ public class Leroy extends Actor
             setRotation(180);
             move(10);
         }
-                
+        
+        if(isTouching(Bob.class))
+        {
+            remove();
+        }
+        
+        System.out.println("Kill Count: " + count);
+    }
+    
+    public void remove()
+    {
+        removeTouching(Bob.class);
+        count ++;
     }
 }
