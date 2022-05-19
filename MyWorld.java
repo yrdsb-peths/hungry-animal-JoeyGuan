@@ -8,29 +8,46 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class MyWorld extends World
 {
-    /**
-     * Constructor for objects of class MyWorld.
-     * 
-     */
+    private int time = 0;
+    public static int score = 0;
+    public int numBobs = 0;
+    public Label scoreLabel = new Label(score, 80);
+    
+    public void act()
+    {
+        time++;
+        if(time == 50)
+        {
+            spawnBob();    
+        }
+        time %= 50;
+    }
+    
     public MyWorld()
     {    
-        // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(600, 400, 1); 
+        super(1000, 600, 1); 
         prepare();
     }
-    /**
-     * Prepare the world for the start of the program.
-     * That is: create the initial objects and add them to the world.
-     */
+
     private void prepare()
     {
         Leroy leroy = new Leroy();
         addObject(leroy,284,207);
+        
+        scoreLabel.setFillColor(Color.WHITE);
+        addObject(scoreLabel,50,50);
     }
     
     public void spawnBob()
     {
         Bob bob = new Bob();
-        addObject(bob, Greenfoot.getRandomNumber(600), Greenfoot.getRandomNumber(400));
+        addObject(bob, Greenfoot.getRandomNumber(1000), Greenfoot.getRandomNumber(600));
+        numBobs++;
+    }
+    
+    public void increaseScore()
+    {
+        score++;
+        scoreLabel.setValue(score);
     }
 }
