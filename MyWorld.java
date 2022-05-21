@@ -31,8 +31,11 @@ public class MyWorld extends World
 
     private void prepare()
     {
+        score = 0;
+        scoreLabel.setValue(score);
+        
         Leroy leroy = new Leroy();
-        addObject(leroy,284,207);
+        addObject(leroy,500,300);
         
         scoreLabel.setFillColor(Color.WHITE);
         addObject(scoreLabel,50,50);

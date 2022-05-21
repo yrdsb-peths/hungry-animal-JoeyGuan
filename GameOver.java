@@ -13,7 +13,7 @@ public class GameOver extends World
         super(1000, 600, 1); 
         Label gameOver = new Label("GAME OVER", 100);
         addObject(gameOver, 500, 250);  
-        Label finalScore = new Label("Score: " + Integer.toString(MyWorld.score), 100);
-        addObject(finalScore, 500, 350);
+        Label highScore = new Label("Score: " + Integer.toString(MyWorld.score), 100);
+        addObject(highScore, 500, 350);
     }
 }

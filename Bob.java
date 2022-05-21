@@ -10,15 +10,22 @@ public class Bob extends Actor
 {
     public void act()
     {
-        move(5);
+        move(10);
         if(System.currentTimeMillis()%10 == 0)
         {
             if(Greenfoot.getRandomNumber(100)>=50)
             {
                 turn(Greenfoot.getRandomNumber(90));
             }
+            else
+            {
+                turn(Greenfoot.getRandomNumber(90)*-1);
+            }
         }
-        
+        if(isAtEdge())
+        {
+            turn(180);
+        }
     }
         
     public Bob()

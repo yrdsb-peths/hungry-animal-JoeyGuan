@@ -12,38 +12,32 @@ public class Leroy extends Actor
     {
         if(Greenfoot.isKeyDown("up")) 
         {
-            setRotation(270); 
-            move(10);
+            setLocation(getX(), getY()-10);
         }
         if(Greenfoot.isKeyDown("down"))
         {
-            setRotation(90);
-            move(10);
+            setLocation(getX(), getY()+10);
         }
         if(Greenfoot.isKeyDown("right"))
         {
-            setRotation(0);
-            move(10);
+            setLocation(getX()+10, getY());
         }
         if(Greenfoot.isKeyDown("left"))
         {
-            setRotation(180);
-            move(10);
+            setLocation(getX()-10, getY());
         }
-        
+
         if(isTouching(Bob.class))
         {
             removeTouching(Bob.class);
             ((MyWorld)getWorld()).increaseScore();
             ((MyWorld)getWorld()).numBobs--;
         }
-        
+
         if(((MyWorld)getWorld()).numBobs==10)
         {
             GameOver gameOver = new GameOver();
             Greenfoot.setWorld(gameOver);
-            ((MyWorld)getWorld()).score = 0;
-            ((MyWorld)getWorld()).scoreLabel.setValue(0);
         }
     }
 }
