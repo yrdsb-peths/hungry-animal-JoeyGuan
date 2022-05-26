@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class MyWorld here.
+ * Main Game World
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Joey Guan
+ * @version May 2022
  */
 public class MyWorld extends World
 {
@@ -12,15 +12,25 @@ public class MyWorld extends World
     public static int score = 0;
     public int numBobs = 0;
     public Label scoreLabel = new Label(score, 80);
+    public int spawnSpeed = 50;
     
     public void act()
     {
         time++;
-        if(time == 50)
+        if(time == spawnSpeed)
         {
             spawnBob();    
         }
-        time %= 50;
+        time %= spawnSpeed;
+        
+        if(score >= 10 && score < 30)
+        {
+            spawnSpeed = 30;
+        }
+        if(score >= 30)
+        {
+            spawnSpeed = 20;
+        }
     }
     
     public MyWorld()

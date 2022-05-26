@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=Label
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ Label\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\r\n\ A\ Label\ class\ that\ allows\ you\ to\ display\ a\ textual\ value\ on\ screen.\r\n\ \r\n\ The\ Label\ is\ an\ actor,\ so\ you\ will\ need\ to\ create\ it,\ and\ then\ add\ it\ to\ the\ world\r\n\ in\ Greenfoot.\ \ If\ you\ keep\ a\ reference\ to\ the\ Label\ then\ you\ can\ change\ the\ text\ it\r\n\ displays.\ \ \r\n\r\n\ @author\ Amjad\ Altadmri\ \r\n\ @version\ 1.1\r\n
 comment1.params=value\ fontSize
 comment1.target=Label(java.lang.String,\ int)
 comment2.params=value\ fontSize

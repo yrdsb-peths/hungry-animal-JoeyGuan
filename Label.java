@@ -1,16 +1,20 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Label here.
+ * A Label class that allows you to display a textual value on screen.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * The Label is an actor, so you will need to create it, and then add it to the world
+ * in Greenfoot.  If you keep a reference to the Label then you can change the text it
+ * displays.  
+ *
+ * @author Amjad Altadmri 
+ * @version 1.1
  */
 public class Label extends Actor
 {
     private String value;
     private int fontSize;
-    private Color fillColor = Color.BLACK;
+    private Color fillColor = Color.WHITE;
     private Color lineColor = Color.WHITE;
         
     private static final Color transparent = new Color(0,0,0,0);

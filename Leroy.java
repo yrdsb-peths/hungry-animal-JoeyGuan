@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Leroy here.
+ * Player Character
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Joey Guan
+ * @version May 2022
  */
 public class Leroy extends Actor
 {
@@ -13,7 +13,9 @@ public class Leroy extends Actor
     private SimpleTimer aTimer = new SimpleTimer();
     private boolean isFacingRight = true;
     private boolean isMoving = false;
-
+    
+    private GreenfootSound bgMusic = new GreenfootSound("amongdrop.mp3");
+    
     public Leroy()
     {
         for(int i = 0; i<rightImages.length; i++)
@@ -69,6 +71,8 @@ public class Leroy extends Actor
 
     public void act()
     {
+        bgMusic.playLoop();
+        
         if(Greenfoot.isKeyDown("up")) 
         {
             setLocation(getX(), getY()-10);
@@ -92,6 +96,7 @@ public class Leroy extends Actor
         
         if(isTouching(Bob.class))
         {
+            Greenfoot.playSound("vineboom.mp3");
             removeTouching(Bob.class);
             ((MyWorld)getWorld()).increaseScore();
             ((MyWorld)getWorld()).numBobs--;

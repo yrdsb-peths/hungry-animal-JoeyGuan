@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Bob here.
+ * Enemy Character
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Joey Guan
+ * @version May 2022
  */
 public class Bob extends Actor
 {
