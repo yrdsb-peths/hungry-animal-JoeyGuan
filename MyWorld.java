@@ -12,7 +12,7 @@ public class MyWorld extends World
     public static int score = 0;
     public int numBobs = 0;
     public Label scoreLabel = new Label(score, 80);
-    public int spawnSpeed = 50;
+    public int spawnSpeed = 40;
     
     public void act()
     {
